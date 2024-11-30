@@ -1,4 +1,4 @@
-🔗Link página de login: https://giovanaramoscp.github.io/login-screen/
+🔗Link da página: https://giovanaramoscp.github.io/login-screen/
 
 <h2></br>📝 Exemplo de credenciais:</br></h2>
 
