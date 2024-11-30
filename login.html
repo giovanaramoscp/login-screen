@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <title>Tela de Login</title>
+</head>
+<body>
+    <div class="main">
+        <div class="left-login">
+            <img class="left-logo" src="assets/imagens/logo.png" alt="Logo">
+        </div>    
+        <div class="right-login">
+            <h1 class="title-login">Faça seu login</h1>
+            <p class="description">Mantenha-se conectado conosco.</p>
+            <div class="card-login">
+                <div class="text-field">
+                    <!-- Campo de e-mail -->
+                    <label for="usuario">E-mail:</label>
+                    <input type="email" name="email" id="email" placeholder="Digite seu e-mail" onchange="onChangeEmail()">
+                    <span id="email-invalid-error" class="errormsg" >E-mail inválido!</span>
+                    <span id="email-required-error" class="errormsg">E-mail é obrigatório!</span>
+                </div>
+                <div class="text-field">
+                    <!-- Campo de senha -->
+                    <label for="senha">Senha:</label>
+                    <input type="password" name="password" id="password" placeholder="Digite sua senha" onchange="onChangePassword()">
+                    <span id="password-required-error" class="errormsg">Senha é obrigatória!</span>
+                </div>
+                    <!-- Campo "esqueci a senha" -->
+                <div class="password-login">
+                    <input type="checkbox"> <a class="remember-password">Lembrar-me</a> </input>
+                    <a class="forgot-password" type="button" id="forgot-password" href="#">Esqueceu a senha?</a>
+                </div>
+                    <!-- Botão de login -->
+                <button class="btn-login" type="button" id="login-button" onclick="verificarLogin()">Login</button>
+                    <!-- Campo de criar conta -->
+                     <label id="login-success" style="display: none;">Logado com sucesso!</label>
+                <a class="new-account">Criar conta?</a>
+            </div>
+        </div>
+    </div>
+</body>
+    <script src="assets/js/script.js"></script>
+</html>
