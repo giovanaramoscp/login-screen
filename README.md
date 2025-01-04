@@ -9,6 +9,3 @@ Para testar o login, você pode utilizar as credenciais fictícias abaixo:
 <br>E-mail 3: "contato@gmail.com" | Senha 3: "c12345",</br>
 <br>E-mail 4: "admin@hotmail.com" | Senha 4: "admin001",</br>
 <br>E-mail 5: "exemplo@email.com" | Senha 5: "00005",</br>
-
-<h2><br>📱 Observação:</br></h2>
-Para uma melhor experiência de visualização mobile, ative a opção "Para computador" no menu de configurações do seu navegador.
