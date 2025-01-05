@@ -1,8 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=League+Spartan:wght@100..900&display=swap");
 
 :root {
-  --primary-color: #01295e;
-  --secondary-color: #f0f0f0;
+  --primary-color: #010937;
+  --secondary-color: #01295e;
+  --tertiary-color: #0057b39c;
+
+  --primary-text-color: #f0f0f0;
+  --secondary-text-color: #f0f0f0ab;
+  --login-button-color: #017cff;
+  --shadows-color: #00083db9;
+  --success-color: #008000;
+  --error-color: #ff0000;
 }
 
 body {
@@ -14,23 +22,24 @@ body * {
   box-sizing: border-box;
 }
 
-h1,
-.description {
-  color: #f0f0f0;
-}
-
-.main {
+main {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   width: 100vw;
   height: 100vh;
-  background: #010937;
+  background: var(--primary-color);
+}
+
+.title-login,
+.description {
+  color: var(--primary-text-color);
 }
 
 .left-logo {
   max-width: 100%;
   height: auto;
+  width: 60%;
 }
 
 .left-login,
@@ -56,16 +65,16 @@ h1,
   align-items: center;
   padding: 15px 20px;
   border-radius: 20px;
-  box-shadow: 0px 10px 40px #00083db9;
-  color: #f0f0f0;
-  background: #0057b39c;
+  box-shadow: 0px 10px 40px var(--shadows-color);
+  color: var(--primary-text-color);
+  background: var(--tertiary-color);
 }
 
 .card-login,
 h1 {
   margin: 0;
   font-weight: 800;
-  color: #f0f0f0;
+  color: var(--primary-text-color);
 }
 
 .text-field {
@@ -83,26 +92,26 @@ input {
   border-radius: 10px;
   padding: 14px;
   font-size: 12pt;
-  box-shadow: 0px 10px 40px #01295e;
-  background-color: #010937;
-  color: #f0f0f0;
+  box-shadow: 0px 10px 40px var(--shadows-color);
+  background-color: var(--primary-color);
+  color: var(--primary-text-color);
   box-sizing: border-box;
 }
 
 .text-field,
 label {
   margin-bottom: 10px;
-  color: #f0f0f0;
+  color: var(--primary-text-color);
 }
 
 .text-field,
 input::placeholder {
-  color: #f0f0f0ab;
+  color: var(--secondary-text-color);
 }
 
 input:focus,
 .btn-login:focus {
-  outline: 2px solid #017cff;
+  outline: 2px solid var(--login-button-color);
   outline-offset: 4px;
 }
 
@@ -117,9 +126,9 @@ input:focus,
   outline: none;
   text-transform: uppercase;
   cursor: pointer;
-  color: #f0f0f0;
-  background-color: #017cff;
-  box-shadow: 0px 10px 40px -12px #010937;
+  color: var(--primary-text-color);
+  background-color: var(--login-button-color);
+  box-shadow: 0px 10px 40px -12px var(--primary-color);
 }
 
 .btn-login:hover {
@@ -129,7 +138,7 @@ input:focus,
 
 .new-account {
   flex-direction: column;
-  color: #f0f0f0;
+  color: var(--primary-text-color);
   padding: 5px;
   cursor: pointer;
 }
@@ -141,21 +150,51 @@ input:focus,
 
 .remember-password {
   flex-direction: column;
-  color: #f0f0f0;
+  color: var(--primary-text-color);
   padding: 5px;
 }
 
 .forgot-password {
   flex-direction: column;
-  color: #f0f0f0ab;
+  color: var(--secondary-text-color);
   padding: 5px;
   cursor: pointer;
+}
+
+.forgot-password:hover {
+  transition: color 0.3s ease;
 }
 
 .errormsg {
   display: none;
   margin-top: 5px;
-  color: #ff0000;
+  color: var(--error-color);
+}
+
+.login-success {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  margin: 15px 0;
+  margin-top: 5px;
+  border-radius: 5px;
+  color: var(--primary-text-color);
+  outline: 5px solid var(--success-color);
+  outline-offset: 5px;
+}
+
+.login-fail {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  margin: 15px 0;
+  margin-top: 5px;
+  border-radius: 5px;
+  color: var(--primary-text-color);
+  outline: 5px solid var(--error-color);
+  outline-offset: 5px;
 }
 
 @media only screen and (max-width: 950px) {

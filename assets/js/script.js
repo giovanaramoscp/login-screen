@@ -1,77 +1,66 @@
 function onChangeEmail() {
-  // toogleLoginButtonDisabled();
-  toogleEmailErrros();
+  toogleLoginButtonDisabled();
+  toogleEmailErrors();
 }
 
 function onChangePassword() {
-  // toogleLoginButtonDisabled();
+  toogleLoginButtonDisabled();
   tooglePasswordErrros();
 }
 
 // Validação de Email (mostra erros)
-function toogleEmailErrros() {
+function toogleEmailErrors() {
   const email = document.getElementById("email").value;
-  if (!email) {
-    document.getElementById("email-required-error").style.display = "block";
-  } else {
-    document.getElementById("email-required-error").style.display = "none";
-    document.getElementById("email-invalid-error").style.display = "none";
-  }
 
-  if (validateEmail(email)) {
-    document.getElementById("email-invalid-error").style.display = "none";
-  } else {
-    document.getElementById("email-invalid-error").style.display = "block";
-  }
+  document.getElementById("email-required-error").style.display = !email
+    ? "block"
+    : "none";
+  document.getElementById("email-invalid-error").style.display =
+    email && !validateEmail(email) ? "block" : "none";
 }
 
 // Validação de Senha (mostra erros)
-function tooglePasswordErrros() {
+function tooglePasswordErrors() {
   const password = document.getElementById("password").value;
 
-  if (!password) {
-    document.getElementById("password-required-error").style.display = "block";
-  } else {
-    document.getElementById("password-required-error").style.display = "none";
-  }
+  document.getElementById("password-required-error").style.display = !password
+    ? "block"
+    : "none";
 }
 
 // Habilita/Desabilita Botão de Login
-// function toogleLoginButtonDisabled() {
-//   const emailValid = isEmailValid();
-//   const passwordValid = isPasswordValid();
+function toogleLoginButtonDisabled() {
+  const emailValid = isEmailValid();
+  const passwordValid = isPasswordValid();
 
-//   document.getElementById("login-button").disabled =
-//     emailValid && passwordValid;
-// }
+  document.getElementById("login-button").disabled =
+    !emailValid && !passwordValid;
+}
 
 // Validar se Email é nulo
 function isEmailValid() {
   const email = document.getElementById("email").value;
-  if (!email) {
-    return false;
-  }
-  return validateEmail(email);
-}
 
-// Validar estrutura do Email
-function validateEmail(email) {
-  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return emailRegex.test(email);
+  return email && validateEmail(email);
 }
 
 // Validar se Password é nulo
 function isPasswordValid() {
   const password = document.getElementById("password").value;
-  if (!password) {
-    return false;
-  }
-  return true;
+
+  return !password;
+}
+
+// Validar estrutura do Email
+function validateEmail(email) {
+  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  return emailRegex.test(email);
 }
 
 // Verifica se o Login é valido
 function verificarLogin() {
-  // Exemplos de email
+  // Exemplos de logins
   const logins = [
     { email: "usuario@email.com", password: "senha123" },
     { email: "teste@email.com", password: "12345678" },
@@ -88,9 +77,11 @@ function verificarLogin() {
   for (var i = 0; i < logins.length; i++) {
     if (logins[i].email == email && logins[i].password == password) {
       document.getElementById("login-success").style.display = "block";
+      document.getElementById("login-fail").style.display = "none";
       return;
     } else {
       document.getElementById("login-success").style.display = "none";
+      document.getElementById("login-fail").style.display = "block";
     }
   }
 }
